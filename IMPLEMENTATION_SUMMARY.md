@@ -51,7 +51,7 @@ All payment rails mentioned in the README now have complete rail-specific implem
 - ✅ Custom metric recording
 - ✅ Helper methods for logging
 
-**Location**: `src/main/java/com/firefly/rails/service/AbstractRailService.java`
+**Location**: `src/main/java/io/fireflysoftware/rails/service/AbstractRailService.java`
 
 ### 3. Resilience Configuration ✅
 
@@ -82,7 +82,7 @@ All payment rails mentioned in the README now have complete rail-specific implem
   - Timeout: 30 seconds
   - Cancel running future on timeout
 
-**Location**: `src/main/java/com/firefly/rails/config/ResilienceConfiguration.java`
+**Location**: `src/main/java/io/fireflysoftware/rails/config/ResilienceConfiguration.java`
 
 ### 4. Spring Boot Auto-Configuration ✅
 
@@ -96,7 +96,7 @@ All payment rails mentioned in the README now have complete rail-specific implem
 - ✅ Configuration summary display
 
 **Files**:
-- `src/main/java/com/firefly/rails/config/RailsAutoConfiguration.java`
+- `src/main/java/io/fireflysoftware/rails/config/RailsAutoConfiguration.java`
 - `src/main/resources/META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports`
 
 ### 5. Utility Classes ✅
@@ -113,7 +113,7 @@ All payment rails mentioned in the README now have complete rail-specific implem
 - ✅ Abstract base for rail-specific mappers
 - ✅ Documentation and usage examples
 
-**Location**: `src/main/java/com/firefly/rails/util/`
+**Location**: `src/main/java/io/fireflysoftware/rails/util/`
 
 ### 6. Health Indicators ✅
 
@@ -124,7 +124,7 @@ All payment rails mentioned in the README now have complete rail-specific implem
 - ✅ Exception handling
 - ✅ Integrates with Spring Boot Actuator
 
-**Location**: `src/main/java/com/firefly/rails/health/RailHealthIndicator.java`
+**Location**: `src/main/java/io/fireflysoftware/rails/health/RailHealthIndicator.java`
 
 ### 7. Existing Components (Previously Implemented)
 

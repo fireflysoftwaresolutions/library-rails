@@ -26,7 +26,7 @@ This guide demonstrates common usage patterns for the library-rails library with
 
 ```xml path=null start=null
 <dependency>
-    <groupId>com.firefly</groupId>
+    <groupId>io.fireflysoftware</groupId>
     <artifactId>library-rails</artifactId>
     <version>1.0.0-SNAPSHOT</version>
 </dependency>

@@ -7,7 +7,7 @@ Comprehensive tests have been created for all newly implemented features. This d
 ## ✅ Tests Created
 
 ### 1. AbstractRailServiceTest (11 tests)
-**Location**: `src/test/java/com/firefly/rails/service/AbstractRailServiceTest.java`
+**Location**: `src/test/java/io/fireflysoftware/rails/service/AbstractRailServiceTest.java`
 
 **Coverage**:
 - ✅ getRailType() method
@@ -26,7 +26,7 @@ Comprehensive tests have been created for all newly implemented features. This d
 **Status**: ✅ Tests compile and ready to run
 
 ### 2. ResilienceConfigurationTest (11 tests)
-**Location**: `src/test/java/com/firefly/rails/config/ResilienceConfigurationTest.java`
+**Location**: `src/test/java/io/fireflysoftware/rails/config/ResilienceConfigurationTest.java`
 
 **Coverage**:
 - ✅ CircuitBreaker registry creation with correct configuration
@@ -44,7 +44,7 @@ Comprehensive tests have been created for all newly implemented features. This d
 **Status**: ✅ Tests compile and ready to run
 
 ### 3. ValidationUtilTest (16 tests)
-**Location**: `src/test/java/com/firefly/rails/util/ValidationUtilTest.java`
+**Location**: `src/test/java/io/fireflysoftware/rails/util/ValidationUtilTest.java`
 
 **Coverage**:
 - ✅ IBAN validation - Valid IBANs from multiple countries
@@ -67,7 +67,7 @@ Comprehensive tests have been created for all newly implemented features. This d
 **Status**: ✅ Tests compile and ready to run
 
 ### 4. RailHealthIndicatorTest (3 tests)
-**Location**: `src/test/java/com/firefly/rails/health/RailHealthIndicatorTest.java`
+**Location**: `src/test/java/io/fireflysoftware/rails/health/RailHealthIndicatorTest.java`
 
 **Coverage**:
 - ✅ Health UP status
@@ -77,7 +77,7 @@ Comprehensive tests have been created for all newly implemented features. This d
 **Status**: ✅ Tests compile and ready to run
 
 ### 5. RailsAutoConfigurationTest (6 tests)
-**Location**: `src/test/java/com/firefly/rails/config/RailsAutoConfigurationTest.java`
+**Location**: `src/test/java/io/fireflysoftware/rails/config/RailsAutoConfigurationTest.java`
 
 **Coverage**:
 - ✅ Autoconfiguration loads

@@ -80,7 +80,7 @@ The `library-rails` library provides a unified, type-safe interface for integrat
 
 ```xml
 <dependency>
-    <groupId>com.firefly</groupId>
+    <groupId>io.fireflysoftware</groupId>
     <artifactId>library-rails</artifactId>
     <version>1.0.0-SNAPSHOT</version>
 </dependency>

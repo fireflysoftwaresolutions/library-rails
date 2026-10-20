@@ -28,18 +28,18 @@ The library-rails library includes a comprehensive test suite validating the **b
 
 | Category | Purpose | Package |
 |----------|---------|---------|
-| **Domain Tests** | Test domain models (Money, BankAccount, etc.) | `com.firefly.rail.domain` |
-| **Integration Tests** | Test complete payment flows | `com.firefly.rail.integration` |
-| **Business Scenario Tests** | Test real-world use cases | `com.firefly.rail.scenarios` |
-| **Platform Abstraction Tests** | Test RailAdapter abstraction | `com.firefly.rails.adapter` |
-| **Spring Boot Integration Tests** | Test configuration & health checks | `com.firefly.rails.config` |
+| **Domain Tests** | Test domain models (Money, BankAccount, etc.) | `io.fireflysoftware.rail.domain` |
+| **Integration Tests** | Test complete payment flows | `io.fireflysoftware.rail.integration` |
+| **Business Scenario Tests** | Test real-world use cases | `io.fireflysoftware.rail.scenarios` |
+| **Platform Abstraction Tests** | Test RailAdapter abstraction | `io.fireflysoftware.rails.adapter` |
+| **Spring Boot Integration Tests** | Test configuration & health checks | `io.fireflysoftware.rails.config` |
 
 ---
 
 ## Test Structure
 
 ```
-src/test/java/com/firefly/
+src/test/java/io/fireflysoftware/
 ├── rail/domain/
 │   ├── MoneyTest.java                    # Money domain model tests
 │   └── BankAccountTest.java              # BankAccount tests

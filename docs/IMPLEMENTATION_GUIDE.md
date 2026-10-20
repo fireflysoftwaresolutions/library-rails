@@ -36,7 +36,7 @@ Implementing a new rail involves:
 
 ```xml
 <dependency>
-    <groupId>com.firefly</groupId>
+    <groupId>io.fireflysoftware</groupId>
     <artifactId>library-rails</artifactId>
     <version>1.0.0-SNAPSHOT</version>
 </dependency>
@@ -58,8 +58,8 @@ Create domain models for rail-specific attributes in `domain/railspecific/`.
 
 **Example: SEPA Credit Transfer**
 
-```java path=/src/main/java/com/firefly/rails/impl/sepa/domain/SEPASpecific.java start=1
-package com.firefly.rails.impl.sepa.domain;
+```java path=/src/main/java/io/fireflysoftware/rails/impl/sepa/domain/SEPASpecific.java start=1
+package io.fireflysoftware.rails.impl.sepa.domain;
 
 import lombok.Builder;
 import lombok.Data;
@@ -125,12 +125,12 @@ Implement all 10 port interfaces. Here's the key interface with SCA support:
 
 #### PaymentRailPort Implementation
 
-```java path=/src/main/java/com/firefly/rails/impl/sepa/ports/SEPAPaymentRailPort.java start=1
-package com.firefly.rails.impl.sepa.ports;
+```java path=/src/main/java/io/fireflysoftware/rails/impl/sepa/ports/SEPAPaymentRailPort.java start=1
+package io.fireflysoftware.rails.impl.sepa.ports;
 
-import com.firefly.rails.adapter.ports.PaymentRailPort;
-import com.firefly.rails.dtos.payments.*;
-import com.firefly.rails.domain.*;
+import io.fireflysoftware.rails.adapter.ports.PaymentRailPort;
+import io.fireflysoftware.rails.dtos.payments.*;
+import io.fireflysoftware.rails.domain.*;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
@@ -366,11 +366,11 @@ public class SEPAPaymentRailPort implements PaymentRailPort {
 
 Extend the abstract service layer (minimal boilerplate):
 
-```java path=/src/main/java/com/firefly/rails/impl/sepa/service/SEPARailService.java start=1
-package com.firefly.rails.impl.sepa.service;
+```java path=/src/main/java/io/fireflysoftware/rails/impl/sepa/service/SEPARailService.java start=1
+package io.fireflysoftware.rails.impl.sepa.service;
 
-import com.firefly.rails.adapter.RailAdapter;
-import com.firefly.rails.service.AbstractRailService;
+import io.fireflysoftware.rails.adapter.RailAdapter;
+import io.fireflysoftware.rails.service.AbstractRailService;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -390,11 +390,11 @@ That's it! All logging, error handling, and common operations are inherited.
 
 Extend the abstract controllers to expose REST APIs:
 
-```java path=/src/main/java/com/firefly/rails/impl/sepa/controller/SEPAPaymentController.java start=1
-package com.firefly.rails.impl.sepa.controller;
+```java path=/src/main/java/io/fireflysoftware/rails/impl/sepa/controller/SEPAPaymentController.java start=1
+package io.fireflysoftware.rails.impl.sepa.controller;
 
-import com.firefly.rails.adapter.RailAdapter;
-import com.firefly.rails.adapter.web.AbstractPaymentRailController;
+import io.fireflysoftware.rails.adapter.RailAdapter;
+import io.fireflysoftware.rails.adapter.web.AbstractPaymentRailController;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -424,7 +424,7 @@ This gives you **13 endpoints** automatically:
 
 Similarly, create controllers for other ports:
 
-```java path=/src/main/java/com/firefly/rails/impl/sepa/controller/SEPAMandateController.java start=1
+```java path=/src/main/java/io/fireflysoftware/rails/impl/sepa/controller/SEPAMandateController.java start=1
 @RestController
 @RequestMapping("/api/sepa")
 public class SEPAMandateController extends AbstractMandateController {
@@ -434,7 +434,7 @@ public class SEPAMandateController extends AbstractMandateController {
 }
 ```
 
-```java path=/src/main/java/com/firefly/rails/impl/sepa/controller/SEPABulkPaymentController.java start=1
+```java path=/src/main/java/io/fireflysoftware/rails/impl/sepa/controller/SEPABulkPaymentController.java start=1
 @RestController
 @RequestMapping("/api/sepa")
 public class SEPABulkPaymentController extends AbstractBulkPaymentController {
@@ -450,12 +450,12 @@ public class SEPABulkPaymentController extends AbstractBulkPaymentController {
 
 Create Spring Boot auto-configuration:
 
-```java path=/src/main/java/com/firefly/rails/impl/sepa/config/SEPAAutoConfiguration.java start=1
-package com.firefly.rails.impl.sepa.config;
+```java path=/src/main/java/io/fireflysoftware/rails/impl/sepa/config/SEPAAutoConfiguration.java start=1
+package io.fireflysoftware.rails.impl.sepa.config;
 
-import com.firefly.rails.adapter.RailAdapter;
-import com.firefly.rails.impl.sepa.adapter.SEPARailAdapter;
-import com.firefly.rails.impl.sepa.client.SEPAApiClient;
+import io.fireflysoftware.rails.adapter.RailAdapter;
+import io.fireflysoftware.rails.impl.sepa.adapter.SEPARailAdapter;
+import io.fireflysoftware.rails.impl.sepa.client.SEPAApiClient;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
@@ -496,8 +496,8 @@ public class SEPAAutoConfiguration {
 
 **Configuration Properties**:
 
-```java path=/src/main/java/com/firefly/rails/impl/sepa/config/SEPAProperties.java start=1
-package com.firefly.rails.impl.sepa.config;
+```java path=/src/main/java/io/fireflysoftware/rails/impl/sepa/config/SEPAProperties.java start=1
+package io.fireflysoftware.rails.impl.sepa.config;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
@@ -547,11 +547,11 @@ firefly:
 
 Create comprehensive tests for your implementation:
 
-```java path=/src/test/java/com/firefly/rails/impl/sepa/SEPAPaymentRailPortTest.java start=1
-package com.firefly.rails.impl.sepa;
+```java path=/src/test/java/io/fireflysoftware/rails/impl/sepa/SEPAPaymentRailPortTest.java start=1
+package io.fireflysoftware.rails.impl.sepa;
 
-import com.firefly.rails.dtos.payments.*;
-import com.firefly.rails.domain.*;
+import io.fireflysoftware.rails.dtos.payments.*;
+import io.fireflysoftware.rails.domain.*;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

@@ -97,7 +97,7 @@ Rail-specific operations use a registry for dynamic discovery.
 ## Package Structure
 
 ```
-com.firefly.rails
+io.fireflysoftware.rails
 ├── adapter/
 │   ├── RailAdapter.java
 │   └── ports/

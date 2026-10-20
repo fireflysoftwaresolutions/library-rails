@@ -103,7 +103,7 @@ All **16 payment rails** mentioned in the README now have complete rail-specific
 Total rail-specific implementation files: **16**
 
 ```
-src/main/java/com/firefly/rails/domain/railspecific/
+src/main/java/io/fireflysoftware/rails/domain/railspecific/
 ├── ACHSpecific.java              (1,276 bytes)
 ├── BACSSpecific.java             (2,628 bytes)
 ├── CHIPSSpecific.java            (2,047 bytes)
