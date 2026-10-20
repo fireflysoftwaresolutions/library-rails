@@ -7,8 +7,8 @@ package com.firefly.rails.health;
 import com.firefly.rails.config.RailProperties;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.boot.actuate.health.Health;
-import org.springframework.boot.actuate.health.HealthIndicator;
+import org.springframework.boot.health.contributor.Health;
+import org.springframework.boot.health.contributor.HealthIndicator;
 import org.springframework.stereotype.Component;
 
 import java.time.Instant;
@@ -26,7 +26,7 @@ import java.util.Map;
  * connectivity to external rail systems.
  * 
  * @see HealthIndicator
- * @see org.springframework.boot.actuate.health.Health
+ * @see org.springframework.boot.health.contributor.Health
  */
 @Slf4j
 @Component

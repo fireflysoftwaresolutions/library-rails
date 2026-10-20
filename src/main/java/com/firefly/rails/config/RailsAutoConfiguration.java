@@ -96,7 +96,7 @@ public class RailsAutoConfiguration {
      * @return RailHealthIndicator bean
      */
     @Bean
-    @ConditionalOnClass(name = "org.springframework.boot.actuate.health.HealthIndicator")
+    @ConditionalOnClass(name = "org.springframework.boot.health.contributor.HealthIndicator")
     @ConditionalOnProperty(prefix = "firefly.rail.health", name = "enabled", havingValue = "true", matchIfMissing = true)
     @ConditionalOnMissingBean
     public RailHealthIndicator railHealthIndicator() {

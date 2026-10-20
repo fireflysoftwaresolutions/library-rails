@@ -9,8 +9,8 @@ import com.firefly.rails.health.RailHealthIndicator;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.actuate.health.Health;
-import org.springframework.boot.actuate.health.Status;
+import org.springframework.boot.health.contributor.Health;
+import org.springframework.boot.health.contributor.Status;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -142,6 +142,8 @@ class SpringBootIntegrationTest {
             when(railAdapter.isHealthy()).thenReturn(true);
             when(railAdapter.getRailType()).thenReturn("ach");
 
+            RailProperties railProperties = new RailProperties();
+            railProperties.setRailType("ach");
             RailHealthIndicator healthIndicator = new RailHealthIndicator(railProperties);
 
             // When: Check health
@@ -239,6 +241,8 @@ class SpringBootIntegrationTest {
                 when(railAdapter.isHealthy()).thenReturn(true);
                 when(railAdapter.getRailType()).thenReturn(railType);
 
+                RailProperties railProperties = new RailProperties();
+                railProperties.setRailType(railType);
                 RailHealthIndicator healthIndicator = new RailHealthIndicator(railProperties);
                 Health health = healthIndicator.health();
 
