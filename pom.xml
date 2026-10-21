@@ -7,12 +7,12 @@
     <parent>
         <groupId>io.fireflysoftware</groupId>
         <artifactId>firefly-parent</artifactId>
-        <version>26.10.4</version>
+        <version>26.10.5</version>
         <relativePath/>
     </parent>
 
     <artifactId>library-rails</artifactId>
-    <version>26.10.4</version>
+    <version>26.10.5</version>
     <packaging>jar</packaging>
 
     <name>Firefly Banking Rails Library</name>
