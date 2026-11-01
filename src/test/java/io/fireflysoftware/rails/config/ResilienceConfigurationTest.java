@@ -95,7 +95,8 @@ class ResilienceConfigurationTest {
         assertThat(registry).isNotNull();
         assertThat(registry.getDefaultConfig()).isNotNull();
         assertThat(registry.getDefaultConfig().getMaxAttempts()).isEqualTo(3);
-        assertThat(registry.getDefaultConfig().getIntervalFunction().apply(1))
+        assertThat(registry.getDefaultConfig().getIntervalBiFunction().apply(1,
+                io.github.resilience4j.core.functions.Either.left(new IllegalStateException("Synthetic retry failure"))))
             .isEqualTo(1000L);
     }
     

@@ -41,9 +41,9 @@ import java.util.Map;
  * @see org.springframework.boot.health.contributor.Health
  */
 @Slf4j
-@Component
+@Component("railHealthIndicator")
 @RequiredArgsConstructor
-public class RailHealthIndicator implements HealthIndicator {
+public class RailHealthIndicatorImpl implements HealthIndicator {
 
     private final RailProperties railProperties;
 

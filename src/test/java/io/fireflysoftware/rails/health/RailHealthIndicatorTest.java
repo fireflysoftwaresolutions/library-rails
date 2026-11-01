@@ -27,7 +27,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 class RailHealthIndicatorTest {
     
-    private RailHealthIndicator healthIndicator;
+    private RailHealthIndicatorImpl healthIndicator;
     private RailProperties railProperties;
     
     @BeforeEach
@@ -36,7 +36,7 @@ class RailHealthIndicatorTest {
         railProperties.setRailType("ACH");
         railProperties.setBasePath("/api/rails");
         
-        healthIndicator = new RailHealthIndicator(railProperties);
+        healthIndicator = new RailHealthIndicatorImpl(railProperties);
     }
     
     @Test
@@ -56,7 +56,7 @@ class RailHealthIndicatorTest {
         railProperties.setRailType("SWIFT");
         railProperties.setBasePath("/api/swift");
         
-        healthIndicator = new RailHealthIndicator(railProperties);
+        healthIndicator = new RailHealthIndicatorImpl(railProperties);
         Health health = healthIndicator.health();
         
         assertThat(health.getStatus()).isEqualTo(Status.UP);

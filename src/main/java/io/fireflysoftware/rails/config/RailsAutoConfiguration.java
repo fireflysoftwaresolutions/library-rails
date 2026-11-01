@@ -16,7 +16,7 @@
 
 package io.fireflysoftware.rails.config;
 
-import io.fireflysoftware.rails.health.RailHealthIndicator;
+import io.fireflysoftware.rails.health.RailHealthIndicatorImpl;
 import io.micrometer.core.instrument.MeterRegistry;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -99,9 +99,9 @@ public class RailsAutoConfiguration {
     @ConditionalOnClass(name = "org.springframework.boot.health.contributor.HealthIndicator")
     @ConditionalOnProperty(prefix = "firefly.rail.health", name = "enabled", havingValue = "true", matchIfMissing = true)
     @ConditionalOnMissingBean
-    public RailHealthIndicator railHealthIndicator() {
+    public RailHealthIndicatorImpl railHealthIndicator() {
         logger.info("Registering RailHealthIndicator for rail type: {}", railProperties.getRailType());
-        return new RailHealthIndicator(railProperties);
+        return new RailHealthIndicatorImpl(railProperties);
     }
     
     /**
