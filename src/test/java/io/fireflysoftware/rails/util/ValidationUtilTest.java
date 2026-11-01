@@ -26,6 +26,8 @@ import java.math.BigDecimal;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 class ValidationUtilTest {
     
@@ -104,7 +106,8 @@ class ValidationUtilTest {
     
     @Test
     void testValidateAmount_NullValue() {
-        Money money = new Money(null, Currency.USD);
+        Money money = mock(Money.class);
+        when(money.getCurrency()).thenReturn(Currency.USD);
         
         assertThatThrownBy(() -> ValidationUtil.validateAmount(money))
             .isInstanceOf(IllegalArgumentException.class)
@@ -114,7 +117,9 @@ class ValidationUtilTest {
     @Test
     void testValidateAmount_ZeroOrNegative() {
         Money zeroMoney = new Money(BigDecimal.ZERO, Currency.USD);
-        Money negativeMoney = new Money(BigDecimal.valueOf(-10), Currency.USD);
+        Money negativeMoney = mock(Money.class);
+        when(negativeMoney.getAmount()).thenReturn(BigDecimal.valueOf(-10));
+        when(negativeMoney.getCurrency()).thenReturn(Currency.USD);
         
         assertThatThrownBy(() -> ValidationUtil.validateAmount(zeroMoney))
             .isInstanceOf(IllegalArgumentException.class)
@@ -127,7 +132,8 @@ class ValidationUtilTest {
     
     @Test
     void testValidateAmount_NullCurrency() {
-        Money money = new Money(BigDecimal.valueOf(100), null);
+        Money money = mock(Money.class);
+        when(money.getAmount()).thenReturn(BigDecimal.valueOf(100));
         
         assertThatThrownBy(() -> ValidationUtil.validateAmount(money))
             .isInstanceOf(IllegalArgumentException.class)
@@ -167,11 +173,7 @@ class ValidationUtilTest {
     
     @Test
     void testValidateBankAccount_NoAccountHolderName() {
-        BankAccount account = BankAccount.fromIban(
-            null,
-            "GB82WEST12345698765432",
-            "DEUTDEFF"
-        );
+        BankAccount account = mock(BankAccount.class);
         
         assertThatThrownBy(() -> ValidationUtil.validateBankAccount(account))
             .isInstanceOf(InvalidAccountException.class)

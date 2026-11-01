@@ -17,7 +17,7 @@
 package io.fireflysoftware.rails.config;
 
 import io.fireflysoftware.rails.domain.RailType;
-import io.fireflysoftware.rails.health.RailHealthIndicator;
+import io.fireflysoftware.rails.health.RailHealthIndicatorImpl;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.autoconfigure.AutoConfigurations;
 import org.springframework.boot.test.context.runner.ApplicationContextRunner;
@@ -63,7 +63,7 @@ class RailsAutoConfigurationTest {
         this.contextRunner
             .withPropertyValues("management.health.defaults.enabled=true")
             .run(context -> {
-                assertThat(context).hasSingleBean(RailHealthIndicator.class);
+                assertThat(context).hasSingleBean(RailHealthIndicatorImpl.class);
             });
     }
     

@@ -126,7 +126,7 @@ All documented features have corresponding tests:
 - ✅ Money and bank account validation
 
 ### Health & Monitoring
-- ✅ RailHealthIndicator
+- ✅ RailHealthIndicatorImpl
 - ✅ Spring Actuator integration
 
 ## 🔧 Test Execution

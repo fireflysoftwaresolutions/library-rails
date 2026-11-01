@@ -117,14 +117,14 @@ All payment rails mentioned in the README now have complete rail-specific implem
 
 ### 6. Health Indicators ✅
 
-**RailHealthIndicator** - Spring Actuator integration:
+**RailHealthIndicatorImpl** - Spring Actuator integration:
 - ✅ Reports rail type and configuration
 - ✅ Provides library version
 - ✅ Timestamp tracking
 - ✅ Exception handling
 - ✅ Integrates with Spring Boot Actuator
 
-**Location**: `src/main/java/io/fireflysoftware/rails/health/RailHealthIndicator.java`
+**Location**: `src/main/java/io/fireflysoftware/rails/health/RailHealthIndicatorImpl.java`
 
 ### 7. Existing Components (Previously Implemented)
 
